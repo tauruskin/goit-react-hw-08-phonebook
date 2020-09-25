@@ -15,3 +15,16 @@ export const deleteContactError = createAction('@contact/deleteError');
 export const handleFilter = createAction('@contact/filter', ({ target }) => ({
   payload: target.value,
 }));
+
+export default {
+  getContactsRequest,
+  getContactsSuccess,
+  getContactsError,
+  addContactRequest,
+  addContactSuccess,
+  addContactError,
+  deleteContactRequest,
+  deleteContactSuccess,
+  deleteContactError,
+  handleFilter,
+};

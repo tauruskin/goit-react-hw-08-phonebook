@@ -1,54 +1,42 @@
 import axios from 'axios';
-import {
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  getContactsRequest,
-  getContactsSuccess,
-  getContactsError,
-  deleteContactRequest,
-  deleteContactSuccess,
-  deleteContactError,
-} from './contactAction';
 
-// axios.defaults.baseURL = 'http://localhost:2000';
+import contactsAction from './contactAction';
 
-export const getContacts = () => async dispatch => {
-  dispatch(getContactsRequest());
+const getContacts = () => async dispatch => {
+  dispatch(contactsAction.getContactsRequest());
   try {
-    const result = await axios.get(
-      `https://phonebook-41d67.firebaseio.com/phonebook.json`,
-    );
-    dispatch(getContactsSuccess(result.data));
+    const result = await axios.get('/contacts');
+    dispatch(contactsAction.getContactsSuccess(result.data));
   } catch (error) {
-    dispatch(getContactsError(error));
+    dispatch(contactsAction.getContactsError(error));
   }
 };
 
-export const addContact = (name, number) => async dispatch => {
-  dispatch(addContactRequest());
+const addContact = (name, number) => async dispatch => {
+  dispatch(contactsAction.addContactRequest());
   try {
-    const result = await axios.post(
-      `https://phonebook-41d67.firebaseio.com/phonebook.json`,
-      {
-        name,
-        number,
-      },
-    );
-    dispatch(addContactSuccess(result.data));
+    const result = await axios.post('/contacts', {
+      name,
+      number,
+    });
+    dispatch(contactsAction.addContactSuccess(result.data));
   } catch (error) {
-    dispatch(addContactError(error));
+    dispatch(contactsAction.addContactError(error));
   }
 };
 
-export const deleteContact = id => async dispatch => {
-  dispatch(deleteContactRequest());
+const deleteContact = id => async dispatch => {
+  dispatch(contactsAction.deleteContactRequest());
   try {
-    await axios.delete(
-      `https://phonebook-41d67.firebaseio.com/phonebook/${id}.json`,
-    );
-    dispatch(deleteContactSuccess(id));
+    await axios.delete(`/contacts/${id}`);
+    dispatch(contactsAction.deleteContactSuccess(id));
   } catch (error) {
-    dispatch(deleteContactError(error));
+    dispatch(contactsAction.deleteContactError(error));
   }
+};
+
+export default {
+  getContacts,
+  addContact,
+  deleteContact,
 };
