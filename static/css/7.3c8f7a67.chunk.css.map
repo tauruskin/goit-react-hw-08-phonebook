@@ -1,0 +1,1 @@
+{"version":3,"sources":["Home.css"],"names":[],"mappings":"AAAA,YACE,aAAc,CACd,iBAAkB,CAClB,wBAAyB,CACzB,qBACF","file":"7.3c8f7a67.chunk.css","sourcesContent":[".home_title {\r\n  color: #085870;\r\n  text-align: center;\r\n  text-transform: uppercase;\r\n  font-family: 'Lobster';\r\n}\r\n"]}
