@@ -49,9 +49,11 @@ const getCurrentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
+
   if (!persistedToken) {
     return;
   }
+
   token.set(persistedToken);
   dispatch(authAction.getCurrentUserRequest());
   try {
