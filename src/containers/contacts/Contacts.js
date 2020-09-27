@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import { contactsOperations, contactsSelector } from '../../redux/contacts';
+import { contactOperations, contactsSelector } from '../../redux/contacts';
 import PhoneForm from '../../components/phoneForm/PhoneForm';
 import ContactList from '../../components/contactList/ContactList';
 import Filter from '../../components/filter/Filter';
@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
   contacts: contactsSelector.itemsSelector(state),
 });
 const mapDispatchToProps = {
-  onGetContacts: contactsOperations.getContacts,
+  onGetContacts: contactOperations.getContacts,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

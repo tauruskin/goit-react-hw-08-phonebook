@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { contactsOperations, contactsSelector } from '../../redux/contacts';
+import { contactOperations, contactsSelector } from '../../redux/contacts';
 
 import './PhoneForm.css';
 
@@ -109,7 +109,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addContact: contactsOperations.addContact,
+  addContact: contactOperations.addContact,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PhoneForm);

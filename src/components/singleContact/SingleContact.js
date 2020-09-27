@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { contactsOperations, contactsSelector } from '../../redux/contacts';
+import { contactOperations, contactsSelector } from '../../redux/contacts';
 import './SingleContact.css';
-import contactOperations from '../../redux/contacts/contactOperations';
 
 const SingleContact = ({ name, number, deleteContact }) => {
   return (
