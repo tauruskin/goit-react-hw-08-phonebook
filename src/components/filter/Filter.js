@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { handleFilter } from '../../redux/contacts/contactAction';
-import { filterSelector } from '../../redux/contacts/contactsSelector';
+import { contactAction, contactsSelector } from '../../redux/contacts';
 import './Filter.css';
 
 const Filter = ({ filter, handleFilter }) => {
@@ -25,11 +24,11 @@ const Filter = ({ filter, handleFilter }) => {
 };
 
 const mapStateToProps = state => ({
-  filter: filterSelector(state),
+  filter: contactsSelector.filterSelector(state),
 });
 
 const mapDispatchToProps = {
-  handleFilter,
+  handleFilter: contactAction.handleFilter,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

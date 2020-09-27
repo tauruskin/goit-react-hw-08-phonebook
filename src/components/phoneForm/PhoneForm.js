@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
-import { addContact } from '../../redux/contacts/contactOperations';
-import {
-  filterSelector,
-  itemsSelector,
-} from '../../redux/contacts/contactsSelector';
+import { contactsOperations, contactsSelector } from '../../redux/contacts';
+
 import './PhoneForm.css';
 
 class PhoneForm extends Component {
@@ -107,12 +104,12 @@ class PhoneForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: itemsSelector(state),
-  filter: filterSelector(state),
+  contacts: contactsSelector.itemsSelector(state),
+  filter: contactsSelector.filterSelector(state),
 });
 
 const mapDispatchToProps = {
-  addContact,
+  addContact: contactsOperations.addContact,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PhoneForm);
@@ -121,7 +118,7 @@ PhoneForm.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      id: PropTypes.number,
+      id: PropTypes.string,
       number: PropTypes.string,
     }),
   ).isRequired,

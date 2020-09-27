@@ -1,0 +1,23 @@
+.header {
+  padding-bottom: 30px;
+}
+
+.navigation-link {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.navigation-link-active {
+  color: #31c53e;
+}
+
+.app_header {
+  background-color: #016f91;
+}
