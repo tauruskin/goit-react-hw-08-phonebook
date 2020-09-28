@@ -54,16 +54,5 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1"
-  },
-  "description": "goit-react-hw-08-phonebook",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tauruskin/goit-react-hw-08-phonebook.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tauruskin/goit-react-hw-08-phonebook/issues"
   }
 }
