@@ -39,7 +39,7 @@ class Login extends Component {
           />
           <button>LogIn</button>
           <p>
-            If you have not got an account yet, please {''}
+            If you have not got an account yet, please{' '}
             <NavLink to="/register">register</NavLink>
           </p>
         </form>

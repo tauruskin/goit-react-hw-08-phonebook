@@ -47,8 +47,8 @@ class Register extends Component {
           />
           <button>Register</button>
           <p>
-            If you have got an account, please {''}
-            <NavLink to="/login">log in</NavLink>{' '}
+            If you have got an account, please{' '}
+            <NavLink to="/login">log in</NavLink>
           </p>
         </form>
       </div>
